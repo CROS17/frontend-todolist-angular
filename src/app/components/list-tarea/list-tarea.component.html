@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="title">
+    <h4>Listado de Tareas y/o Cursos</h4>
+    <button type="button" class="btn btn-info" routerLink="/add">Agregar[+]</button>
+  </div>
+	<table class="table table-hover">
+		<thead>
+		  <tr>
+			<th scope="col">Nombre</th>
+			<th scope="col">Descripción</th>
+			<th scope="col">Inversión</th>
+			<th scope="col">Actions</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr *ngFor="let item of listTareas" class="table-active">
+        <th>{{ item.name }}</th>
+        <td>{{ item.description }}</td>
+        <td>{{ item.price }}</td>
+        <td>
+          <button [routerLink]="['/edit', item.id]" type="button" class="btn btn-warning btn-sm ms-2">Edit</button>
+          <button type="button" class="btn btn-danger btn-sm ms-2">Delet</button>
+        </td>
+		  </tr>
+		</tbody>
+	  </table>
+</div>
