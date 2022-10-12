@@ -1,6 +1,7 @@
+<app-progress-bar *ngIf="loading"></app-progress-bar>
 <div class="container">
   <div class="title">
-    <h4>Listado de Tareas y/o Cursos</h4>
+    <h4>Listado de Tareas y/o Objetivos</h4>
     <button type="button" class="btn btn-info" routerLink="/add">Agregar[+]</button>
   </div>
 	<table class="table table-hover">
@@ -19,9 +20,11 @@
         <td>{{ item.price }}</td>
         <td>
           <button [routerLink]="['/edit', item.id]" type="button" class="btn btn-warning btn-sm ms-2">Edit</button>
-          <button type="button" class="btn btn-danger btn-sm ms-2">Delet</button>
+		  <button (click)="deleteTarea(item.id!)" type="button" class="btn btn-secondary btn-sm ms-2">Delete</button>
+          <!-- <button type="button" class="btn btn-danger btn-sm ms-2">Delet</button> -->
         </td>
 		  </tr>
 		</tbody>
 	  </table>
+	  <h5 *ngIf="listTareas.length == 0">No hay tareas para mostrar</h5>
 </div>
