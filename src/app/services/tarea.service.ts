@@ -11,30 +11,30 @@ export class TareaService {
 
 	private myAppUrl: string;
 	private myApiUrl: string;
-  
-	constructor(private http: HttpClient) { 
+
+	constructor(private http: HttpClient) {
 	  this.myAppUrl = environment.endpoint;
 	  this.myApiUrl = 'api/tareas/'
 	}
 
-	getListTareas(): Observable<Tarea[]> {
-		return this.http.get<Tarea[]>(`${this.myAppUrl}${this.myApiUrl}`);
+	   getListTareas(): Observable<Tarea[]> {
+		  return this.http.get<Tarea[]>(`${this.myAppUrl}${this.myApiUrl}`);
 	   }
-	 
+
 	   deleteTarea(id: number): Observable<void> {
-		 return this.http.delete<void>(`${this.myAppUrl}${this.myApiUrl}${id}`)
+		  return this.http.delete<void>(`${this.myAppUrl}${this.myApiUrl}${id}`)
 	   }
-	 
+
 	   saveTarea(tarea: Tarea): Observable<void> {
-		 return this.http.post<void>(`${this.myAppUrl}${this.myApiUrl}`,tarea)
+		  return this.http.post<void>(`${this.myAppUrl}${this.myApiUrl}`,tarea)
 	   }
-	 
+
 	   getTarea(id: number): Observable<Tarea> {
-		 return this.http.get<Tarea>(`${this.myAppUrl}${this.myApiUrl}${id}`)
+		  return this.http.get<Tarea>(`${this.myAppUrl}${this.myApiUrl}${id}`)
 	   }
-	 
+
 	   updateTarea(id: number, tarea: Tarea): Observable<void> {
-		 return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`, tarea);
+		  return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`, tarea);
 	   }
-  
+
 }

@@ -10,6 +10,7 @@ import { TareaService } from 'src/app/services/tarea.service';
   templateUrl: './add-list-tarea.component.html',
   styleUrls: ['./add-list-tarea.component.scss']
 })
+
 export class AddListTareaComponent implements OnInit {
 
 	form: FormGroup;

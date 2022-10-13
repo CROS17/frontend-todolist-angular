@@ -17,11 +17,10 @@
 		  <tr *ngFor="let item of listTareas" class="table-active">
         <th>{{ item.name }}</th>
         <td>{{ item.description }}</td>
-        <td>{{ item.price }}</td>
+        <td>{{ item.price | currency }}</td>
         <td>
           <button [routerLink]="['/edit', item.id]" type="button" class="btn btn-warning btn-sm ms-2">Edit</button>
-		  <button (click)="deleteTarea(item.id!)" type="button" class="btn btn-secondary btn-sm ms-2">Delete</button>
-          <!-- <button type="button" class="btn btn-danger btn-sm ms-2">Delet</button> -->
+		      <button (click)="deleteTarea(item.id!)" type="button" class="btn btn-secondary btn-sm ms-2">Delete</button>
         </td>
 		  </tr>
 		</tbody>

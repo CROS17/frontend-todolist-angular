@@ -2,7 +2,7 @@
 <div class="row mt-1">
   <div class="col-lg-4 offset-lg-4">
     <div class="card border-dark mb-3" style="max-width: 25rem;">
-      <div class="card-header text-center">Agregar Tarea</div>
+      <div class="card-header text-center">{{ operacion }} Tarea</div>
       <div class="card-body">
         <form [formGroup]="form" (ngSubmit)="addTarea()">
           <div class="form-group">
